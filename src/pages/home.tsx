@@ -4,7 +4,12 @@ import Preview from '@/components/previewer';
 import { AiOutlinePicLeft, AiOutlinePicCenter, AiOutlinePicRight } from 'react-icons/ai';
 
 const Home = () => {
-  const [markdown, setMarkdown] = React.useState(`hello world`);
+  const [markdown, setMarkdown] = React.useState(`# Readme Markdown Editor
+  
+### How to Use?
+
+cheatsheet goes [here](https://www.markdownguide.org/cheat-sheet/)
+  `);
   const [posEnd, setPosEnd] = React.useState(0);
   const [view, setView] = React.useState({
     edit: true,
