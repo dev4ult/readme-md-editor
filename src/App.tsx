@@ -1,16 +1,15 @@
-// import { useState } from 'react';
-// import reactLogo from './assets/react.svg';
-// import viteLogo from '/vite.svg';
 import { ThemeProvider } from '@/components/theme-provider';
+import ContentCenter from './components/content-center';
 import Home from './pages/home';
-// import './App.css';
+import { Toaster } from '@/components/ui/toaster';
 
 function App() {
-  // const [count, setCount] = useState(0);
-
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <Home />
+      <ContentCenter>
+        <Home />
+      </ContentCenter>
+      <Toaster />
     </ThemeProvider>
   );
 }
