@@ -9,7 +9,7 @@ const Home = () => {
 
 - make another side project
 - watch some motivational videos
-- do workout
+- workout
 
 ---
 
