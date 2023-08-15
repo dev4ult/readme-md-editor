@@ -66,8 +66,8 @@ const Home = () => {
           finalText = subStart + '[' + selectedWord + '](https:://google.com)' + subEnd;
           break;
         case 'code':
-          positionEnd = getEndPos('```');
-          finalText = subStart + '```\n' + selectedWord + '\n```' + subEnd;
+          positionEnd = getEndPos((positionStart == 0 ? '' : '\n') + '```\n');
+          finalText = subStart + (positionStart == 0 ? '' : '\n') + '```\n' + selectedWord + '\n```' + subEnd;
           break;
         case 'horizontal-rule':
           positionEnd = getEndPos((positionStart == 0 ? '' : '\n\n') + '---' + '\n\n');
@@ -75,11 +75,11 @@ const Home = () => {
           break;
         case 'list-ol':
           positionEnd = getEndPos((positionStart == 0 ? '' : '\n') + '1. ');
-          finalText = subStart + (positionStart == 0 ? '' : '\n') + '1. \n2. \n3. \n' + '\n' + selectedWord + subEnd;
+          finalText = subStart + (positionStart == 0 ? '' : '\n') + '1. \n2. \n3. \n' + selectedWord + subEnd;
           break;
         case 'list-ul':
           positionEnd = getEndPos((positionStart == 0 ? '' : '\n') + '- ');
-          finalText = subStart + (positionStart == 0 ? '' : '\n') + '- \n- \n- \n' + '\n' + selectedWord + subEnd;
+          finalText = subStart + (positionStart == 0 ? '' : '\n') + '- \n- \n- \n' + selectedWord + subEnd;
           break;
         default:
           return prev;
