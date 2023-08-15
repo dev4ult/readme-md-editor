@@ -7,7 +7,7 @@ const Documentation = () => {
       <div className="mb-5">
         <h1 className="text-2xl font-semibold">Open Source</h1>
         <p className="flex gap-1">
-          <span>This project is open sourced this</span>
+          <span>This project is open sourced in this</span>
           <a href="https://github.com/dev4ult/readme-md-editor" className="flex gap-2 items-center text-blue-400 hover:underline" target="_black">
             <span>github repository</span>
             <FaGithub />
