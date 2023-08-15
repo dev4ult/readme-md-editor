@@ -6,8 +6,6 @@ import { FaCopy } from 'react-icons/fa6';
 import { Textarea } from './ui/textarea';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
-// import { Button } from './ui/button';
-
 type Props = {
   handleChange: React.ChangeEventHandler<HTMLTextAreaElement>;
   handleClick: React.MouseEventHandler<HTMLElement>;
@@ -50,9 +48,6 @@ const Editor = React.forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
           <button type="button" id="code" onClick={handleClick}>
             <FaCode />
           </button>
-          {/* <button type="button" id="image" onClick={handleClick}>
-            <FaImage />
-          </button> */}
           <span>|</span>
           <button type="button" id="horizontal-rule" onClick={handleClick}>
             <VscHorizontalRule size="1.5rem" />
@@ -63,16 +58,11 @@ const Editor = React.forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
           <button type="button" id="list-ol" onClick={handleClick}>
             <FaListOl />
           </button>
-          {/* <button type="button" id="list-check" onClick={handleClick}>
-          <FaListCheck />
-        </button> */}
         </div>
         <TooltipProvider>
           <Tooltip>
-            <TooltipTrigger>
-              <button type="button" onClick={CopyToClipboard} className="p-2 rounded border-2 group hover:bg-slate-800">
-                <FaCopy size="0.7rem" />
-              </button>
+            <TooltipTrigger onClick={CopyToClipboard} className="p-2 rounded border-2 group hover:bg-slate-800">
+              <FaCopy size="0.7rem" />
             </TooltipTrigger>
             <TooltipContent>
               <p>Copy to Clipboard</p>
