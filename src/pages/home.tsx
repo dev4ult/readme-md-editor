@@ -110,15 +110,7 @@ const Home = () => {
 
   React.useEffect(() => {
     let lastMdNote = localStorage.getItem('last-md-note');
-    const note = `### How to not Procastinate?
-
-    - make another side project
-    - watch some motivational videos
-    - workout
-    
-    ---
-    
-    visit my [github profile](https://github.com/dev4ult) to find more project i created`;
+    const note = `visit my [github profile](https://github.com/dev4ult) to find more project i made`;
     if (!lastMdNote) {
       localStorage.setItem('last-md-note', note);
       lastMdNote = localStorage.getItem('last-md-note');
