@@ -5,16 +5,7 @@ import Documentation from './documentation';
 import { AiOutlinePicLeft, AiOutlinePicCenter, AiOutlinePicRight } from 'react-icons/ai';
 
 const Home = () => {
-  const [markdown, setMarkdown] = React.useState(`### How to not Procastinate?
-
-- make another side project
-- watch some motivational videos
-- workout
-
----
-
-visit my [github profile](https://github.com/dev4ult) to find more project i created
-  `);
+  const [markdown, setMarkdown] = React.useState('');
   const [posEnd, setPosEnd] = React.useState(0);
   const [view, setView] = React.useState({
     edit: true,
@@ -25,6 +16,7 @@ visit my [github profile](https://github.com/dev4ult) to find more project i cre
 
   function handleChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
     const { value } = e.target;
+    localStorage.setItem('last-md-note', value);
     setMarkdown(value);
   }
 
@@ -115,6 +107,24 @@ visit my [github profile](https://github.com/dev4ult) to find more project i cre
       }
     });
   }
+
+  React.useEffect(() => {
+    let lastMdNote = localStorage.getItem('last-md-note');
+    const note = `### How to not Procastinate?
+
+    - make another side project
+    - watch some motivational videos
+    - workout
+    
+    ---
+    
+    visit my [github profile](https://github.com/dev4ult) to find more project i created`;
+    if (!lastMdNote) {
+      localStorage.setItem('last-md-note', note);
+      lastMdNote = localStorage.getItem('last-md-note');
+    }
+    setMarkdown(lastMdNote ? lastMdNote : note);
+  }, []);
 
   React.useEffect(() => {
     if (textAreaRef.current) {
