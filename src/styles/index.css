@@ -69,6 +69,14 @@
 }
 
 @layer base {
+  ::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: white;
+  }
+
   * {
     @apply border-border;
     font-family: 'Inter', 'sans-serif';
