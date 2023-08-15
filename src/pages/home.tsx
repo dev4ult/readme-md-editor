@@ -1,14 +1,19 @@
 import * as React from 'react';
 import Editor from '@/components/editor';
 import Preview from '@/components/previewer';
+import Documentation from './documentation';
 import { AiOutlinePicLeft, AiOutlinePicCenter, AiOutlinePicRight } from 'react-icons/ai';
 
 const Home = () => {
-  const [markdown, setMarkdown] = React.useState(`# Readme Markdown Editor
-  
-### How to Use?
+  const [markdown, setMarkdown] = React.useState(`### How to not Procastinate?
 
-cheatsheet goes [here](https://www.markdownguide.org/cheat-sheet/)
+- make another side project
+- watch some motivational videos
+- do workout
+
+---
+
+visit my [github profile](https://github.com/dev4ult) to find more project i created
   `);
   const [posEnd, setPosEnd] = React.useState(0);
   const [view, setView] = React.useState({
@@ -66,7 +71,11 @@ cheatsheet goes [here](https://www.markdownguide.org/cheat-sheet/)
           break;
         case 'link':
           positionEnd = getEndPos('[');
-          finalText = subStart + '[' + selectedWord + '](https:://)' + subEnd;
+          finalText = subStart + '[' + selectedWord + '](https:://google.com)' + subEnd;
+          break;
+        case 'code':
+          positionEnd = getEndPos('```');
+          finalText = subStart + '```\n' + selectedWord + '\n```' + subEnd;
           break;
         case 'horizontal-rule':
           positionEnd = getEndPos((positionStart == 0 ? '' : '\n\n') + '---' + '\n\n');
@@ -133,6 +142,7 @@ cheatsheet goes [here](https://www.markdownguide.org/cheat-sheet/)
           </button>
         </div>
       </div>
+      <Documentation />
     </div>
   );
 };

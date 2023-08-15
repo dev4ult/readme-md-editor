@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useToast } from '@/components/ui/use-toast';
-import { FaHeading, FaBold, FaItalic, FaStrikethrough, FaLink, FaListUl, FaListOl, FaImage } from 'react-icons/fa';
+import { FaHeading, FaBold, FaItalic, FaStrikethrough, FaLink, FaListUl, FaListOl, FaCode } from 'react-icons/fa';
 import { VscHorizontalRule } from 'react-icons/vsc';
 import { FaCopy } from 'react-icons/fa6';
 import { Textarea } from './ui/textarea';
@@ -47,9 +47,12 @@ const Editor = React.forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
           <button type="button" id="link" onClick={handleClick}>
             <FaLink />
           </button>
-          <button type="button" id="image" onClick={handleClick}>
-            <FaImage />
+          <button type="button" id="code" onClick={handleClick}>
+            <FaCode />
           </button>
+          {/* <button type="button" id="image" onClick={handleClick}>
+            <FaImage />
+          </button> */}
           <span>|</span>
           <button type="button" id="horizontal-rule" onClick={handleClick}>
             <VscHorizontalRule size="1.5rem" />
