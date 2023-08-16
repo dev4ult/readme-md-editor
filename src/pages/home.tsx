@@ -130,9 +130,9 @@ const Home = () => {
   return (
     <div>
       <div className="flex gap-5 relative">
-        <Editor handleClick={handleClick} handleChange={handleChange} value={markdown} ref={textAreaRef} visible={edit} />
+        <Editor handleClick={handleClick} handleChange={handleChange} value={markdown} ref={textAreaRef} handleView={handleView} visible={edit} isPreviewVisible={preview} />
         <Preview markdown={markdown} visible={preview} />
-        <div className="absolute right-0 top-0 mt-3 mr-4 flex gap-2 items-center">
+        <div className={`absolute right-0 top-0 p-3 mt-0.5 flex gap-2 items-center ${preview ? undefined : 'hidden'}`}>
           <button type="button" id="edit" onClick={handleView}>
             <AiOutlinePicLeft size="1.35rem" />
           </button>
