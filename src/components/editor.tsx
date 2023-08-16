@@ -66,7 +66,7 @@ const Editor = React.forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
           {isPreviewVisible ? (
             <TooltipProvider>
               <Tooltip>
-                <TooltipTrigger className="p-1.5 rounded border-2 hover:bg-slate-800" onClick={CopyToClipboard}>
+                <TooltipTrigger className="p-2 rounded border-2 hover:bg-slate-800" onClick={CopyToClipboard}>
                   <FaCopy size="0.8rem" />
                 </TooltipTrigger>
                 <TooltipContent>
@@ -75,7 +75,7 @@ const Editor = React.forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
               </Tooltip>
             </TooltipProvider>
           ) : (
-            <button type="button" className="text-sm py-0.5 px-1.5 rounded border-2 hover:bg-slate-800" onClick={CopyToClipboard}>
+            <button type="button" className="text-sm py-1 px-2 rounded border-2 hover:bg-slate-800" onClick={CopyToClipboard}>
               Copy to Clipboard
             </button>
           )}
