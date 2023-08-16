@@ -1,6 +1,6 @@
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 import remarkGfm from 'remark-gfm';
-import { CustomH1, CustomH2, CustomH3, CustomParagraph, CustomAnchor, CustomPre, CustomCode, CustomBlockquote, CustomOl, CustomUl } from './custom-tag';
+import { CustomH1, CustomH2, CustomH3, CustomHR, CustomParagraph, CustomAnchor, CustomPre, CustomCode, CustomBlockquote, CustomOl, CustomUl } from './custom-tag';
 import { CustomTable, CustomTableHeader, CustomTableHead, CustomTableBody, CustomTableRow, CustomTableCell } from './custom-table';
 
 type Props = {
@@ -20,6 +20,7 @@ const Preview = ({ markdown, visible }: Props) => {
           h1: (props) => <CustomH1 {...props} />,
           h2: (props) => <CustomH2 {...props} />,
           h3: (props) => <CustomH3 {...props} />,
+          hr: () => <CustomHR />,
           p: (props) => <CustomParagraph {...props} />,
           a: (props) => <CustomAnchor {...props} />,
           table: (props) => <CustomTable {...props} />,

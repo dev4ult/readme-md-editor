@@ -18,6 +18,8 @@ const CustomH2 = ({ children }: CustomTagProps) => (
 
 const CustomH3 = ({ children }: CustomTagProps) => <h3 className="scroll-m-20 text-xl mb-2 mt-4 font-semibold tracking-tight">{children}</h3>;
 
+const CustomHR = () => <hr className="mb-4" />;
+
 const CustomParagraph = ({ children }: CustomTagProps) => <p className="leading-7 mb-4">{children}</p>;
 
 const CustomAnchor = ({ children, href }: CustomAnchorProps) => (
@@ -38,4 +40,4 @@ const CustomUl = ({ children }: CustomTagProps) => <ul className="list-disc ml-5
 
 // const CustomCl = ({ children }: CustomTagProps) => <ul className="ml-5">{children}</ul>;
 
-export { CustomH1, CustomH2, CustomH3, CustomParagraph, CustomAnchor, CustomPre, CustomCode, CustomBlockquote, CustomOl, CustomUl };
+export { CustomH1, CustomH2, CustomH3, CustomParagraph, CustomAnchor, CustomPre, CustomCode, CustomBlockquote, CustomOl, CustomUl, CustomHR };
