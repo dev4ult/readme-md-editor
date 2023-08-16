@@ -7,18 +7,18 @@ type CustomAnchorProps = {
   href?: string | undefined;
 };
 
-const CustomH1 = ({ children }: CustomTagProps) => <h1 className="scroll-m-20 border-b pb-2 text-3xl font-bold tracking-tight transition-colors first:mt-0">{children}</h1>;
+const CustomH1 = ({ children }: CustomTagProps) => <h1 className="scroll-m-20 border-b pb-2 mb-4 text-3xl font-bold tracking-tight transition-colors first:mt-0">{children}</h1>;
 
 const CustomH2 = ({ children }: CustomTagProps) => (
-  <>
-    <h2 className="scroll-m-20 text-2xl py-1 font-semibold tracking-tight">{children}</h2>
+  <div className="mt-6 mb-4">
+    <h2 className="scroll-m-20 text-2xl pb-2 font-semibold tracking-tight">{children}</h2>
     <hr />
-  </>
+  </div>
 );
 
-const CustomH3 = ({ children }: CustomTagProps) => <h3 className="scroll-m-20 text-xl py-0.5 font-semibold tracking-tight">{children}</h3>;
+const CustomH3 = ({ children }: CustomTagProps) => <h3 className="scroll-m-20 text-xl mb-2 mt-4 font-semibold tracking-tight">{children}</h3>;
 
-const CustomParagraph = ({ children }: CustomTagProps) => <p className="leading-7 [&:not(:first-child)]:mt-2">{children}</p>;
+const CustomParagraph = ({ children }: CustomTagProps) => <p className="leading-7 mb-4">{children}</p>;
 
 const CustomAnchor = ({ children, href }: CustomAnchorProps) => (
   <a href={href} className="text-blue-400 hover:underline">
