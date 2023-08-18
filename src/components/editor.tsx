@@ -92,7 +92,7 @@ const Editor = React.forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
           </div>
         </div>
       </div>
-      <Textarea ref={ref} onChange={handleChange} value={value} className="rounded-none min-h-[40rem] p-7 text-base border-white resize-none">
+      <Textarea ref={ref} onChange={handleChange} value={value} className="rounded-none min-h-[40rem] px-4 py-3 text-base border-white resize-none">
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger onClick={CopyToClipboard}>
